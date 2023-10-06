@@ -22,8 +22,6 @@ namespace MasterDetailes.Controllers
 
 
 
-
-
         public ActionResult AddNewSpot(int? id)
         {
             ViewBag.spots = new SelectList(db.Spots.ToList(), "SpotId", "SpotName", (id != null) ? id.ToString() : "");
