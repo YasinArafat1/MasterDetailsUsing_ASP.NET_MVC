@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MasterDetailes.Models.Spot>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create new","Create")
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x=>x.SpotName)</th>
+            <th>
+                Actions
+            </th>
+        </tr>   
+    </thead>
+    <tbody>
+        
+            @foreach (var item in Model)
+            {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(x => item.SpotName)
+                  </td>
+                  <td>
+                      @Html.ActionLink("Edit", "Edit", new { id = item.SpotId }, new { @class = "btn btn-success" })
+
+                      @Html.ActionLink("Delete", "Delete", new { id = item.SpotId }, new { @class = "btn btn-success" })
+                  </td>
+              </tr>
+            }
+        
+    </tbody>
+</table>
